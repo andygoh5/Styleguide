@@ -1,16 +1,14 @@
-<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-
 <nav class="navigation">
     <div class="navigation-home">
-        <a href="{{ site.baseurl }}/">{% include 'ucla-acm-logo.svg' %}</a>
+        <a href="{{ site.baseurl }}/"><h2><span>ACM</span> Design</h2></a>
     </div>
-    <div class="links">
+    <ul>
     {% for node in collections.nav %}
         
         {% if page.url == node.url %}
-            <a href="{{{{ node.url | prepend: site.baseurl }}" class="active">{{ node.data.title }}</a>
+            <li><a href="{{{{ node.url | prepend: site.baseurl }}" class="active">{{ node.data.title }}</a></li>
         {% else %}
-            <a href="{{{{ node.url | prepend: site.baseurl }}" class="not-active">{{ node.data.title }}</a>
+            <li><a href="{{{{ node.url | prepend: site.baseurl }}" class="not-active">{{ node.data.title }}</a></li>
         {% endif %}
 
         {% if node.data.title == "Committees" %}
@@ -27,5 +25,5 @@
             </ul>
         {% endif %}
     {% endfor %}
-    </div>
+    </ul>
 </nav>
